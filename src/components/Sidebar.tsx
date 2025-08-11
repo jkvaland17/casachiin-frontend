@@ -474,12 +474,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         </button>
 
         <div className="main-logo">
-          {sessionData?.data?.name?.toLowerCase().includes("jammu") ? (
-            <Image src={LogoJammu} alt="Logo" width={50} height={50} />
-          ) : (
-            <Image src={LOGO} alt="Logo" width={65} height={65} />
-          )}
-          <h6 className="logo_text">ALL INDIA INSTITUTE OF MEDICAL SCIENCES</h6>
+          <h6 className="logo_text">CA Admin Panel</h6>
         </div>
         {loading && (
           <div className="w-full flex items-center gap-3 mt-5">

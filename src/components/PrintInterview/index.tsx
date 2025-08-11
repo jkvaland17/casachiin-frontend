@@ -338,7 +338,7 @@ const PrintAwardSheet: React.FC<PropsData> = ({
                             fontSize: "14px",
                           }}
                         >
-                          All India Institute Of Medical Sciences, New Delhi
+                          CA Admin Panel, New Delhi
                         </p>
                         <p
                           className="english_title"
@@ -667,7 +667,7 @@ const PrintAwardSheet: React.FC<PropsData> = ({
                                 fontSize: "14px",
                               }}
                             >
-                              All India Institute Of Medical Sciences
+                              CA Admin Panel
                             </p>
                             <p
                               className="english_title"
@@ -696,7 +696,7 @@ const PrintAwardSheet: React.FC<PropsData> = ({
                                 fontSize: "14px",
                               }}
                             >
-                              All India Institute Of Medical Sciences, New
+                              CA Admin Panel, New
                               Delhi-110029
                             </p>
                           </>
