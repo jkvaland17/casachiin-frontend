@@ -252,22 +252,7 @@ const Page: React.FC = () => {
     const { name, value } = e.target;
     setLoginData({ ...loginData, [name]: value });
   };
-  const handleChangeVerifyOtp = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    const newErrors = {} as any;
-    if (name === "otp" && value.length > 6) {
-      newErrors.otp = "OTP cannot exceed 6 digits";
-      setErrors(newErrors);
-    } else {
-      newErrors.otp = "";
-      setErrors(newErrors);
-      setVerifyOtp({ ...verifyOtp, [name]: value });
-    }
-  };
-  const handleChangeSendOtp = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setSendOtp({ ...sendOtp, [name]: value });
-  };
+
   const Check2FaStatus = async () => {
     try {
       setLoading(true);
@@ -305,7 +290,7 @@ const Page: React.FC = () => {
       }
 
       if (error) {
-        toast.error(error);
+        // toast.error(error);
         setLoading(false);
         setDisableResendOtp(false);
       }

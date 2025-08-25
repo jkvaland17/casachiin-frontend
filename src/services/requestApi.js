@@ -2680,6 +2680,8 @@ class DataService {
     });
   }
   GetPermissionByUserId(id, token) {
+    console.log("id",{id, token});
+    
     return http.get(`admin/getPermissionByUserId?id=${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,

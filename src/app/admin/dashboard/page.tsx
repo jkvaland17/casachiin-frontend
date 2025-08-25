@@ -11,7 +11,7 @@ export default function Dashboard() {
       <InterviewerHeader
         icon={false}
         view={false}
-        heading={`HELLO, ${session?.data?.user?.data?.user?.name}! `}
+        heading={`HELLO, ${session?.data?.user?.data?.name}! `}
         subHeading="WELCOME TO DASHBOARD"
       />
     </main>
