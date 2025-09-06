@@ -7,8 +7,6 @@ import {
   CallVerifyOtp,
   CallCheckTwoFactorStatus,
   CallVerifyTwoFactorStatus,
-  CallEnrollFace,
-  CallFaceAuthenticate,
 } from "@/_ServerActions";
 import React, { useEffect, useState } from "react";
 import { signIn, useSession } from "next-auth/react";
@@ -323,51 +321,7 @@ const Page: React.FC = () => {
       setLoading(false);
     }
   };
-  const handleFaceAction = async (file: string, isEnroll: boolean) => {
-    try {
-      setAuthenticateLoader(true);
-      const Data = {
-        image: file,
-        phone: loginData.userId,
-        ...(isEnroll && { password: loginData.password }),
-      };
-      console.log(Data, isEnroll);
 
-      const response = isEnroll
-        ? await CallEnrollFace(Data)
-        : await CallFaceAuthenticate(Data);
-      const { data, error, func } = response as any;
-      console.log(data, error, func);
-      if (data?.data?.enrollImage) {
-        toast.success("Face enrolled successfully");
-        setNewEnroll(false);
-        setIsAuthenticated(true);
-        onOpenChange();
-        instructionOnClose();
-        setAuthenticateLoader(false);
-      }
-      if (data?.data?.isAuthenticated) {
-        toast.success(data?.message);
-        handleLogin();
-      }
-      if (error) {
-        console.log(error);
-        handleCommonErrors(error);
-        setAuthenticateLoader(false);
-      }
-    } catch (error) {
-      handleCommonErrors(error);
-      setAuthenticateLoader(false);
-    }
-  };
-  const HandleFaceRecognisation = async (file: string) => {
-    await handleFaceAction(file, newEnroll);
-  };
-  const HandleCloseInstrunctionModal = () => {
-    instructionOnClose();
-    setNewEnroll(true);
-    onOpen();
-  };
   return (
     <>
       <div className="main-content">

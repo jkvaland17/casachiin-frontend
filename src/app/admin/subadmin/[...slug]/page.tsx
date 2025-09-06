@@ -1,6 +1,5 @@
 "use client";
 import {
-  CallAllTransition,
   CallCreatePermission,
   CallGetPermissionByUserId,
   CallUpdatePermission,
@@ -34,17 +33,24 @@ const UserConfigurationId = () => {
       show: false,
       layout: "/admin",
     },
-     {
+    {
       path: "/MarriageForm",
       name: "Marriage Certificate",
       icon: "monitoring",
       show: false,
       layout: "/admin",
     },
-      {
+    {
       path: "/marriageRegistration",
       name: "Marriage Registration",
       icon: "monitoring",
+      show: false,
+      layout: "/admin",
+    },
+    {
+      path: "/user",
+      name: "User",
+      icon: "person",
       show: false,
       layout: "/admin",
     },
