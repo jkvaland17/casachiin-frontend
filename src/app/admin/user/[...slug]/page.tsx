@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@heroui/react";
-import { LayoutGrid, Mars } from "lucide-react";
+import { LayoutGrid, Mars,IdCard  } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
@@ -22,11 +22,19 @@ const Services = () => {
       description: "Marriage Registration Description",
       link: "/admin/MarriageRegistration",
     },
+    {
+      _id: "3",
+      code: "pancard",
+      name: "Pancard",
+      description: "Pancard Description",
+      link: "/admin/Pancard",
+    },
   ];
   const getIconForCategory = (code: string) => {
     const iconMap: Record<string, React.ReactNode> = {
       marriageCertificate: <Mars />,
       marriageRegistration: <Mars />,
+      pancard: <IdCard />,
       default: <LayoutGrid />,
     };
     return iconMap[code] || iconMap?.default;
